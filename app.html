@@ -60,7 +60,25 @@
 
         // HEADER
         class Header extends React.Component{
+          constructor(props){
+            super(props)
+            this.state = {
+              searchVisibility : false
+            }
+          }
+
+          showSearch(){
+            this.setState({searchVisibility : !this.state.searchVisibility})
+          }
+
+      
             render(){
+              let searchInputClasses = ['searchInput']
+              if(this.state.searchVisibility){
+                searchInputClasses.push('active')
+              }
+
+
                 return(
                     <div className="header">
                       <div className="fa fa-more"></div>
@@ -71,10 +89,12 @@
 
                       <input
                         type="text"
-                        className="searchInput"
+                        className={searchInputClasses.join(" ")}
                         placeholder='Search ...' />
 
-                      <div className="fa fa-search searchIcon"></div>
+                      <div className="fa fa-search searchIcon"
+                      onClick={this.showSearch.bind(this)}
+                      ></div>
                     </div>
                 )
             }
