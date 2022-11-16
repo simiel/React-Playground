@@ -31,9 +31,37 @@
       // JSX element
       const jsxElement = <h1>Hello World</h1>
 
+      // Clock class
+      class Clock extends React.Component{
+        constructor(props){
+          super(props)
+
+          const currentTime = new Date()
+          this.state = {
+            hours : currentTime.getHours(),
+            minutes : currentTime.getMinutes(),
+            seconds : currentTime.getSeconds(),
+            ampm : currentTime.getHours() >=12 ? "pm" : 'am'
+          }
+        }
+
+        render(){
+          console.log(hours)
+
+
+          return(
+            <div className="clock">
+              {hours == 0 ? 12 : (hours >= 12) ? hours - 12 : hours}
+              :{minutes > 9 ? minutes : `0${minutes}`}
+              :{seconds > 9 ? seconds : `0${seconds}`}
+              </div>
+          )
+        }
+      }
+
       // we render the JSX element using the ReactDOM package
       // ReactDOM has the render method and the render method takes two arguments
-      ReactDOM.render(jsxElement, rootElement)
+      ReactDOM.render(<Clock />, rootElement)
     </script>
   </body>
 </html>
