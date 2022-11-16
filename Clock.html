@@ -37,16 +37,35 @@
           super(props)
 
           const currentTime = new Date()
+          console.log("MARKER22")
           this.state = {
             hours : currentTime.getHours(),
             minutes : currentTime.getMinutes(),
             seconds : currentTime.getSeconds(),
             ampm : currentTime.getHours() >=12 ? "pm" : 'am'
           }
+
+          this.setTimer()
+        }
+
+        setTimer(){
+          setTimeout(this.updateClock.bind(this), 1000);
+        }
+
+        updateClock(){
+          const currentTime = new Date()
+          console.log("MARKER")
+          this.setState({
+            hours : currentTime.getHours(),
+            minutes : currentTime.getMinutes(),
+            seconds : currentTime.getSeconds(),
+            ampm : currentTime.getHours() >=12 ? "pm" : 'am'
+          },
+          this.setTimer)
         }
 
         render(){
-          console.log(hours)
+          const {hours, minutes, seconds, ampm} = this.state
 
 
           return(
