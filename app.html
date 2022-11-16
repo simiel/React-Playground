@@ -27,10 +27,36 @@
     
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <!-- <script type="text/babel">
+    <script type="text/babel">
+        // To get the root element from the HTML document
+        const rootElement = document.querySelector('.root')
 
-    </script> -->
+        // JSX element
+        const jsxElement = <h1>Hello World</h1>
 
-    <script type="text/babel" src="./app.js"></script>
+
+
+
+        //APP
+        class App extends React.component{
+            render(){
+                return(<h1>This is Simiel's header</h1>)
+            }
+        }
+
+
+
+
+
+
+
+
+
+        // we render the JSX element using the ReactDOM package
+        // ReactDOM has the render method and the render method takes two arguments
+        ReactDOM.render(jsxElement, rootElement)
+    </script>
+
+    <script src="./app.html"></script>
   </body>
 </html>
