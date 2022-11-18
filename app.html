@@ -46,6 +46,7 @@
                             <Header title="Chat" />
                             <Content activities={activities} />
                             <Content activities={activities} />
+                            <Interactive />
                         </div>
                     </div>
                 )
@@ -140,6 +141,21 @@
 
 
 
+              </div>
+            )
+          }
+        }
+
+
+
+        class Interactive extends React.Component{
+
+          render(){
+            return(
+              <div className="interactive">
+                <div className="mousemove">
+                  <p onMouseMove={(e)=>console.log(e)}>On Mouse Move</p>
+                </div>  
               </div>
             )
           }
