@@ -1,3 +1,19 @@
-*{
-    background-color: rgb(145, 255, 2);
+body{
+    margin: 0 20%;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px 10px;
+    background-color: rgb(87, 202, 248);
+}
+
+.searchInput{
+    display: none;
+}
+
+.active{
+    display: inline;
 }
