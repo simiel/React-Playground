@@ -25,3 +25,22 @@ body{
     width: 50px;
     background-color: yellow;
 }
+
+.content{
+    padding: 10px;
+}
+
+.content .item{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.avatar{
+    width: 20%;
+    display: flex;
+}
+
+p{
+    margin: 0;
+}

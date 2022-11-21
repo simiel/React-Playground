@@ -40,13 +40,8 @@
                     <div className="notificationsFrame">
                         <div className="panel">
                             {/* Content */}    
-                            <Header title="Timeline" />
-                            <Header title="Profile" />
-                            <Header title="Settings" />
-                            <Header title="Chat" />
+                            <Header title="Simiel's Search" />
                             <Content activities={activities} />
-                            <Content activities={activities} />
-                            <Interactive />
                         </div>
                     </div>
                 )
@@ -125,15 +120,15 @@
                   activities.map((activity)=>{
                     return(
                       <div className="item">
-                      <div className="avatar">
-                        <img src={activity.user.avatar} alt=""/>
-                        {activity.user.name}
-                      </div>
-                      <span className="time">
-                        {activity.timestamp}
-                      </span>
-                      <p>{activity.text}</p>
-                      <div className="commentCount">{activity.comments.length}</div>
+                        <div className="avatar">
+                          <img src={activity.user.avatar} alt=""/>
+                        </div>
+                        <span className="time">
+                          {activity.timestamp}
+                        </span>
+                        <p>{activity.text}</p>
+                        <p>{activity.user.name}</p>
+                        <div className="commentCount">{activity.comments.length}</div>
                     </div>
                       )
                   })
@@ -148,18 +143,6 @@
 
 
 
-        class Interactive extends React.Component{
-
-          render(){
-            return(
-              <div className="interactive">
-                <div className="mousemove">
-                  <p onMouseMove={(e)=>console.log(e)}>On Mouse Move</p>
-                </div>  
-              </div>
-            )
-          }
-        }
 
         const activities = [
           {
